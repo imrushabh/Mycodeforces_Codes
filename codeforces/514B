@@ -1,0 +1,91 @@
+
+/*
+  method 1:- the ratio of coordinates points lying on the line is same.(o(n))
+  method 2:-if the points are collinear then area of the triangle formed using the three points is 0. (o(n2))
+
+*/
+/*
+AUTHOR:- RUSHABH GAHERWAR (RUSH)
+team:- S.H.I.E.L.D
+
+  *-*
+  ***
+ * * *
+*  *  *
+*  *  *
+   *
+   *
+  * *
+ *   *
+ *   *
+*/
+#include <bits/stdc++.h>
+#include <cstdio>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <string>
+#include <map>
+#include <set>
+#include <ctime>
+#include <stack>
+#include <queue>
+#include <clocale>
+#include <iostream>
+
+
+using namespace std;
+
+
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
+#define fup(i, a, n) for (ll i = a; i < n; i++)
+#define fdw(i, a, n) for (ll i = n-1; i >= a; i--)
+#define ll long long
+#define pll pair<ll, ll>
+#define pii pair<int,int>
+typedef vector<int> vi;
+typedef vector<pii> vpii;
+#define pb push_back
+#define mk make_pair
+#define F first
+#define S second
+#define mod 1000000007
+#define maxn INT_MAX
+#define inf 1e18
+#define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define sf(x) scanf("%d",&x)
+#define pf(x) printf("%d ",x)
+#define pfd(x) printf("%.9lf ",x)
+#define sf2(x,y) scanf("%d %d",&x,&y)
+#define pf2(x,y) printf("%d %d ",x,y)
+#define sf3(x,y,z) scanf("%d %d %d",&x,&y,&z)
+#define pf3(x,y,z) printf("%d %d %d ",x,y,z)
+#define sfc(c) scanf(" %c",&c)
+#define pfc(c) printf("%c",c)
+
+void imGonnaDoIt()
+{
+  set<double> S;
+  long double n,x,y,xx,yy,u=0;
+  cin >> n >> x >> y;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> xx >> yy;
+        if (x != xx) S.insert((y-yy)/(x-xx));
+        else u = 1;//denominatior is not 0
+    }
+    cout << S.size() + u;
+    
+
+}
+
+int main()
+{
+  boost;
+  imGonnaDoIt();
+
+  return 0;
+}
+
+
+
