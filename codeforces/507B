@@ -1,0 +1,85 @@
+/*
+logic:-Let's draw a straight line between the two centers.
+Clearly to move the center with maximum distance we need to rotate it around the intersection of the line and the circle with 180 degrees. So the maximum distance we can move the center each time is 2 * R. Let's continue moving the center with 2 * R distance each time until the two circles intersects. Now obviously we can make the center moves into its final position by rotating it around one of the intersection points of the two circles until it reaches the final destination.
+Every time we make the circle moves 2 * R times except the last move it'll be  ≤ 2 * R. Assume that the initial distance between the two points is d So the solution to the problem will be ceil(d/2r).
+
+*/
+
+
+/*
+AUTHOR:- RUSHABH GAHERWAR (RUSH)
+team:- S.H.I.E.L.D
+
+  *-*
+  ***
+ * * *
+*  *  *
+*  *  *
+   *
+   *
+  * *
+ *   *
+ *   *
+*/
+#include <bits/stdc++.h>
+#include <cstdio>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <string>
+#include <map>
+#include <set>
+#include <ctime>
+#include <stack>
+#include <queue>
+#include <clocale>
+#include <iostream>
+
+
+using namespace std;
+
+
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
+#define fup(i, a, n) for (ll i = a; i < n; i++)
+#define fdw(i, a, n) for (ll i = n-1; i >= a; i--)
+#define ll long long
+#define pll pair<ll, ll>
+#define pii pair<int,int>
+typedef vector<int> vi;
+typedef vector<pii> vpii;
+#define pb push_back
+#define mk make_pair
+#define F first
+#define S second
+#define mod 1000000007
+#define maxn INT_MAX
+#define inf 1e18
+#define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define sf(x) scanf("%d",&x)
+#define pf(x) printf("%d ",x)
+#define pfd(x) printf("%.9lf ",x)
+#define sf2(x,y) scanf("%d %d",&x,&y)
+#define pf2(x,y) printf("%d %d ",x,y)
+#define sf3(x,y,z) scanf("%d %d %d",&x,&y,&z)
+#define pf3(x,y,z) printf("%d %d %d ",x,y,z)
+#define sfc(c) scanf(" %c",&c)
+#define pfc(c) printf("%c",c)
+
+void imGonnaDoIt()
+{
+  ll r,x,y,xx,yy;
+  cin>>r>>x>>y>>xx>>yy;
+	cout<<ceil(hypot((x-xx),(y-yy))/(r*2));//hypot is a function which returns the square root of sum of squares of thw number. i.e distance is calculated between two points
+
+}
+
+int main()
+{
+  boost;
+  imGonnaDoIt();
+
+  return 0;
+}
+
+
+
