@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    long double d,a,b,g;
+    int i;
+    for(i=1;i<=t;i++)
+    {
+        cin>>d;
+        g=pow(d,2)-(4.00000000000*d);
+        if(g<0)
+            cout<<"N";
+        else
+        {
+            a=(d+sqrt(g))/2.00000000000;
+            b=d-a;
+            if(a>=0 && b>=0)
+                cout<<"Y "<<setprecision(20)<<a<<" "<<setprecision(20)<<b;
+            else
+                cout<<"N";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
