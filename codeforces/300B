@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int res[1000009];
+int sinh(int n)
+{
+    char a[10];
+    itoa(n,a,10);
+    for (int i=0;i<strlen(a);i++)
+    {
+        if (a[i]!='0') a[i]='1';
+    }
+    return atoi(a);
+}
+int main()
+{
+    int n,sum=0;
+    cin >> n;
+    while (n>0)
+    {
+        int m = sinh(n);
+        n-=m;
+        res[sum]=m;
+        sum++;
+    }
+    if (sum==0){
+      cout << 1 << endl << 0;
+      return 0;
+    }
+    cout << sum << endl;
+    for (int i=0;i<sum;i++) cout << res[i] << ' ';
+    return 0;
+}
