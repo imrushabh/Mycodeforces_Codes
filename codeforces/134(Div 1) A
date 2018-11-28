@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int graph[105][105];
+int x[105],y[105];
+int visted[105],n;
+void dfs(int s)
+{
+   // cout<<s<<" ";
+    visted[s]=1;
+    for(int i=1;i<=n;i++)
+    {
+        if(graph[s][i] && visted[i]==0)
+        dfs(i);
+
+    }
+    return ;
+}
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    int i,j,k;
+    cin>>n;
+    for(i=1;i<=n;i++)
+        cin>>x[i]>>y[i];
+        
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(x[i]==x[j] ||y[i]==y[j] )
+            graph[i][j]=1;
+        }
+    }
+    int ans=0;
+    for(i=1;i<=n;i++)
+    {
+        if(visted[i]==0)
+        {
+            dfs(i);
+            ans++;
+        }
+    }
+    cout<<ans-1<<endl;
+    return 0;
+}
