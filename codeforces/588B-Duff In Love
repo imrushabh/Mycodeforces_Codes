@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+
+int main(){
+  long long n;std::cin>>n;
+  long long l=1;
+  for(long long k=2;k*k<=n;++k){
+    if(n%k==0){
+      l*=k;
+      while(n%k==0)n/=k;
+    }
+  }
+  std::cout<<l*n<<'\n';
+}
