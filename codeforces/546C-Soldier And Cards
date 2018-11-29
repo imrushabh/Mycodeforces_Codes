@@ -1,0 +1,58 @@
+/*
+  Author:-Rushabh Gaherwar
+*/
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+
+ll nxt(){
+    ll n;
+    cin >> n;
+    return n;
+}
+
+int main() {
+    ll n, k = 0;
+    cin >> n;
+    queue<ll> q[2];
+    for (int i = 0; i < 2; ++i) {
+        ll nn;
+        cin >> nn;
+        for (int j = 0; j < nn; ++j) {
+            q[i].push(nxt());
+        }
+    }
+    while(k < 1e6) {
+        ll a, b;
+        if (!q[0].empty()) {
+            a = q[0].front();
+            q[0].pop();
+        }
+        else {
+            cout << k << " " << 2;
+            return 0;
+        }
+        if (!q[1].empty()) {
+            b = q[1].front();
+            q[1].pop();
+        }
+        else {
+            cout << k << " " << 1;
+            return 0;
+        }
+        if(a > b) {
+            q[0].push(b);
+            q[0].push(a);
+        }
+        else {
+            q[1].push(a);
+            q[1].push(b);
+        }
+        k++;
+    }
+    cout << -1;
+    return 0;
+}
