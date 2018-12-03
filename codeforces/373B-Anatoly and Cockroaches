@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int a=0,b=0,c=0,d=0;
+    for (int i=0 ; i<n ; i++)
+    {
+        if(i%2)
+        {
+            if(s[i]=='r')
+                a++;
+            else
+                b++;
+        }
+        else
+        {
+            if(s[i]=='r')
+                c++;
+            else
+                d++;
+        }
+    }
+    int e=max(a,d);
+    int f=max(b,c);
+    cout<<min(e,f)<<endl;
+    return 0;
+}
