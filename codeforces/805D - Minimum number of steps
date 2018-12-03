@@ -1,0 +1,21 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+long long m=1e9+7;
+int main() {
+  string s;
+  cin>>s;
+  ll cb=0,ans=0;
+  for(int i=s.size()-1;i>=0;i--)
+  {
+    if(s[i]=='b')
+      cb++;
+    else if(s[i]=='a')
+    {
+      ans=(ans%m+cb%m)%m;
+      cb=(2*(cb%m))%m;
+    }
+  }
+  cout<<ans<<endl;
+}
