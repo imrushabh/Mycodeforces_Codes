@@ -4,9 +4,8 @@ using namespace std;
 #define ll long long
 long long m=1e9+7;
 int main() {
-  int a[]={2,3,4,5,7,9,11,13,17,19,23,29,31,37,41,43,47,25};
-  int visit[17]={0};
-  int t=18,ans=0;
+  int a[]={2,3,4,5,7,9,11,13,17,19,23,29,31,37,41,43,47,25,49};
+  int t=19,ans=0;
   while(t--)
   {
     cout<<a[t]<<endl;
