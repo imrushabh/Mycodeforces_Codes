@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define N 1000010
+
+int n, a[N], b[N];
+
+int main()
+{
+	scanf("%d", &n);
+	for(int i=1; i<=n; ++i)
+	{
+		scanf("%d", a+i);
+		b[a[i]] = i;
+	}
+
+	int s = 0;
+	for(int i=1; i<=n; ++i)
+		if(b[i] != i)
+		{
+			b[a[i]] = b[i];
+			a[b[i]] = a[i];
+			++s;
+		}
+
+	printf("%s", (n^s)&1? "Um_nik" : "Petr");
+	return 0;
+}
