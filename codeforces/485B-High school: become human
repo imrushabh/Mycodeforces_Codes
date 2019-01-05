@@ -1,0 +1,23 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main() {
+  ll x,y;
+  cin>>x>>y;
+  double ans1=(double)(y*log(x));
+  double ans2=(double)(x*log(y));
+  //cout<<ans1<<" "<<ans2<<endl;
+  if(abs(ans1-ans2)<0.000001)
+    cout<<'=';
+  else if(ans1>ans2)
+  {
+    cout<<'>';
+  }
+  else if(ans1<ans2)
+  {
+    cout<<'<';
+
+  }
+
+}
