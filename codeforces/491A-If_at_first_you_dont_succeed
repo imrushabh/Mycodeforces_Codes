@@ -1,0 +1,17 @@
+#include <iostream>
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main() {
+  int a,b,c,n,ck;
+  cin>>a>>b>>c>>n;
+  ck=a+b-c;
+   if(a<c || b<c|| ck>=n){
+        cout<<"-1"<<endl;
+        return 0;
+    }
+    else
+        cout<<n-ck<<endl;
+  
+}
