@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int a[500005],dp[500005];
+int main(){
+	int n,k,d,i;
+	cin>>n>>k>>d;
+	for(i=1;i<=n;i++)
+		cin>>a[i];
+		sort(a+1,a+1+n);
+	for(i=1;i<=k;i++)
+	dp[i]=1;
+	for(i=k;i<=n;i++){
+		if(a[i]-a[dp[i-k+1]]<=d) dp[i+1]=i+1;
+		else dp[i+1]=dp[i];
+	}
+	if(dp[n+1]==n+1) cout<<"YES\n";
+	else cout<<"NO\n";
+	return 0;
+}
