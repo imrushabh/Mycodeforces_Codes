@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+char s[101];
+char t[101];
+int main()
+{
+	cin >> s >> t;
+	int ans = 0;
+	for (int i = 1; s[i] != '\0'; i++)
+	{
+		if (s[i - 1] == 'X'&&s[i] == '0'&&t[i - 1] == '0'&&t[i] == '0')
+		{
+			ans++;
+			s[i - 1] = s[i] = t[i - 1] = t[i] = 'X';
+		}
+		else if (s[i - 1] == '0'&&s[i] == '0'&&t[i - 1] == 'X'&&t[i] == '0')
+		{
+			ans++;
+			s[i - 1] = s[i] = t[i - 1] = t[i] = 'X';
+		}
+		else if (s[i - 1] == '0'&&s[i] == 'X'&&t[i - 1] == '0'&&t[i] == '0')
+		{
+			ans++;
+			s[i - 1] = s[i] = t[i - 1] = t[i] = 'X';
+		}
+		else if (s[i - 1] == '0'&&s[i] == '0'&&t[i - 1] == '0'&&t[i] == 'X')
+		{
+			ans++;
+			s[i - 1] = s[i] = t[i - 1] = t[i] = 'X';
+		}
+		else if (s[i - 1] == '0'&&s[i] == '0'&&t[i - 1] == '0'&&t[i] == '0')
+		{
+			if (s[i + 1] == '\0')
+				ans++;
+			else
+			{
+				if (s[i + 1] == '0'&&t[i + 1] == '0')
+				{
+					ans += 2;
+					s[i - 1] = s[i] = s[i + 1] = t[i - 1] = t[i] = t[i + 1] = 'X';
+				}
+				else
+				{
+					ans++;
+					i += 1;
+				}
+			}
+		}
+	}
+	cout << ans;
+	return 0;
+}
