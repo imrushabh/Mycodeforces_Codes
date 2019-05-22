@@ -1,0 +1,147 @@
+/* Read input from STDIN. Print your output to STDOUT*/
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+#include<bits/stdc++.h>
+using namespace std;
+string myfunc(int *a,int *b,int *c,int ndx,int n)
+{
+    vector<int> v;
+    for(int i=ndx;i<n;)
+    {
+        if(a[i]>0)
+            v.push_back(a[i]);
+        if(c[i]!=-1)
+        {
+            i=c[i];
+        }
+        else
+          break;
+
+    }
+    
+    sort(v.begin(),v.end());
+    stringstream ss;
+    copy( v.begin(), v.end(), ostream_iterator<int>(ss, ""));
+    string s = ss.str();
+    //s = s.substr(0, s.length()-1);
+    cout<<"string is "<<s<<endl;
+    return s;
+}
+
+
+int main(int argc, char *a[])
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int a[n],b[n],c[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        int max=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            if(i+3<=n-1)
+            {
+                if(a[i]+b[i+3]>b[i+3] && a[i+3]>0)
+                {
+                    b[i]=a[i]+b[i+3];
+                    c[i]=i+3;
+                }
+                else
+                {
+                    b[i]=a[i];
+                    c[i]=i+3;
+                }
+            }
+            else
+            {
+                if(a[i]>0)
+                {
+                    b[i]=a[i];
+                    c[i]=-1;
+                }
+                else
+                {
+                    b[i]=0;
+                    c[i]=-1;
+                }
+            
+            }
+
+
+
+            if(i+2<=n-1)
+            {
+                if(a[i]+b[i+2]>b[i+2] && a[i+2]>0)
+                {
+                    b[i]=a[i]+b[i+2];
+                    c[i]=i+2;
+                }
+                else
+                {
+                    b[i]=a[i];
+                    c[i]=i+2;
+                }
+            }
+            else
+            {
+                if(a[i]>0)
+                {
+                    b[i]=a[i];
+                    c[i]=-1;
+                }
+                else
+                {
+                    b[i]=0;
+                    c[i]=-1;
+                }
+            }
+
+
+            
+
+            if(b[i]>max)
+                max=b[i];
+        }
+
+        cout<<"max is "<<max<<endl;
+        for(int i=0;i<n;i++)
+        {
+          cout<<a[i]<<" "<<b[i]<<" "<<c[i]<<endl;
+        }
+
+        int ndx;
+        for(int i=n-1;i>=0;i--)
+        {
+            if(b[i]==max)
+            {
+                ndx=i;break;
+            }
+        }
+
+        if(b[ndx-1]==max && a[ndx]>0)
+        {
+            string s1=myfunc(a,b,c,ndx,n);
+            string s2=myfunc(a,b,c,ndx-1,n);
+            if(s1>s2)
+                cout<<s1<<endl;
+            else
+                cout<<s2<<endl;
+
+        }
+        else
+        {
+            cout<<myfunc(a,b,c,ndx,n)<<endl;
+        }
+    }
+}
