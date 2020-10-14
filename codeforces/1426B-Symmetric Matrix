@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t,n,m;cin>>t;
+	while(t--){
+		int a,b,c,d,f=0;
+		cin>>m>>n;
+		for(int i=0;i<m;i++){
+			cin>>a>>b>>c>>d;
+			if(b==c)f=1;
+		} 
+		if(f&&n%2==0)printf("YES\n");
+		else printf("NO\n");
+	} 
+} 
