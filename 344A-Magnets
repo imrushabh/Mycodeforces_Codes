@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+ 
+using namespace std ;
+ 
+int main()
+{
+    int n,k;
+    cin>>n;
+    int h[n];
+    k=n;
+    int count = 1;
+    while(k--)
+    {
+        cin>>h[k];
+        if(k<n-1)
+        {
+            if(h[k]!=h[k+1])
+            {
+                count++;
+            }
+        }
+    }
+    cout<<count<<endl;
+ 
+}
