@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int T;
+    cin>>T;
+    for(int i=0; i<T;i++)
+    {
+        int n, sum,rem;
+        cin>>n;
+        
+         for (sum=0;n>0;n=n/10)
+         
+         {
+             rem=n%10;
+             sum=rem+sum;
+            
+         }
+         cout<<sum<<endl;
+    }
+
+    return 0;
+}
