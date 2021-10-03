@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define lp(i,a,b) for(ll i=a;i<b;i++)
+#define pl(i,a,b) for(ll i=a;i>=b;i--)
+#define sp(n,a) cout<<fixed<<setprecision(n)<<a
+#define maxa(a,n) *max_element(a,a+n)
+#define mina(a,n) *min_element(a,a+n)
+#define bn cout<<"\n"
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+using namespace std;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll t; cin>>t;
+    while(t--){
+        ll x,cnt=0;
+        string s; cin>>s;
+        x=s.size();
+        if(x&1) no;//each operation reducing 2 letters
+        else{
+            lp(i,0,x){
+                if(s[i]=='B') cnt++;//in each operation 1 B is deleted surely
+            }
+            if(cnt==x/2) yes;
+            else no;
+        }
+    }
+} 
