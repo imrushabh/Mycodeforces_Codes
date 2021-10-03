@@ -1,0 +1,10 @@
+I=input
+for _ in[0]*int(I()):
+ n,m,k=map(int,I().split());*a,=''.join(I()for _ in[0]*n);n*=m;f=0
+ while n:
+  n-=1;l=0
+  while l<=min(n%m,m-n%m-1,n//m)and a[n-l*m-l]<'.'>a[n-l*m+l]:l+=1
+  if l>k:
+   while l:l-=1;j=n-l*m;a[j-l]=a[j+l]='#'
+  else:f|=a[n]=='*'
+ print('YNEOS'[f::2])
