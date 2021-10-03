@@ -1,0 +1,4 @@
+a= list(i for i in range(2000) if i%3!=0 if i%10!=3 )
+for i in range(int(input())):
+    n= int(input())
+    print(a[n-1])
