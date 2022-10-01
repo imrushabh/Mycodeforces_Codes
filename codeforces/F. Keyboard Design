@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define debug(x) cout<<#x<<'='<<x<<endl;
+using namespace std;
+void fastio()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+}
+int main()
+{
+	fastio();
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		cin>>n;
+		ll a[n+2],b[n+2];
+		vector<ll> z,o;
+		ll one=0,zero=0;
+		ll sum=0;
+		for(int i=0;i<n;i++)
+		{
+			cin>>a[i];
+			if(a[i]==0)zero++;
+			else one++;
+		}
+		for(int i=0;i<n;i++)
+		{
+			cin>>b[i];
+			if(a[i]==1)
+			{
+				o.push_back(b[i]);
+			}
+			else 
+			{
+				z.push_back(b[i]);
+			}
+		}
+		sort(z.begin(),z.end(),greater<>());
+		sort(o.begin(),o.end(),greater<>());
+		if(one>zero)
+		{
+ 
+			for(int i=0;i<zero;i++)
+			{
+				sum+= z[i]*2;
+				sum+= o[i]*2;
+			}
+			for(int i=zero;i<one;i++)
+			{
+				sum+= o[i];
+			}
+		}
+		else if(zero>one)
+		{
+			for(int i=0;i<one;i++)
+			{
+				sum+= z[i]*2;
+				sum+= o[i]*2;
+			}
+			for(int i=one;i<zero;i++)
+			{
+				sum+= z[i];
+			}
+		}
+		else
+		{
+			sort(b,b+n);
+			sum = b[0];
+			for(int i=1;i<n;i++)
+			{
+				sum+=(b[i]*2);
+			}
+		}
+		cout<<sum<<endl;
+	}
+	return 0;
+}
