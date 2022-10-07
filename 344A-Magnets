@@ -1,25 +1,31 @@
 #include <bits/stdc++.h>
- 
 using namespace std ;
+#include ll long long
  
 int main()
 {
-    int n,k;
+    ll flag=1;
+    ll n,k;
     cin>>n;
-    int h[n];
+    //int h[n];
+    vector<int> h(n);
     k=n;
-    int count = 1;
+    ll count = 1;
+    
     while(k--)
     {
         cin>>h[k];
-        if(k<n-1)
+        ll sz=n-1;
+        
+        if(flag==1 && k<sz)
         {
-            if(h[k]!=h[k+1])
+            if(flag==1 && h[k]!=h[k+1])
             {
                 count++;
             }
         }
     }
+    
     cout<<count<<endl;
  
 }
